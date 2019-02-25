@@ -31,13 +31,13 @@
                             <label for="inputPassword">Password</label>
                             <input type="password" class="form-control" id="inputPassword" name="password" [(ngModel)]="password"
                                 required="required" (focus)="toggleInvUser(false)"
-                                (keydown)="$event.keyCode === 13 && ValidateAndLogin()" autocomplete="password"/>
+                                (keydown)="keyCheck($event)" />
                         </div>
                         <div class="checkbox pull-right">
                             <label>
                                 <input type="checkbox"> Remember me </label>
                         </div>
-                        <span class="btn btn btn-primary" ng-click="ValidateAndLogin()">
+                        <span class="btn btn btn-primary" (click)="ValidateAndLogin()">
                             Log In
                         </span>
                       

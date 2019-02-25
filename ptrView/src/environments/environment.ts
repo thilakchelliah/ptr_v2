@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  serviceURL:'http://localhost:4500'
+  //serviceURL:'http://localhost:4500'
+  serviceURL:'https://ptrs2-thilakchelliah.c9users.io/'
 };
 
 /*
