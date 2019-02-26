@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../service/login.service'
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit {
   invalidUser = false;
   username = "";
   password = "";
-  constructor(private loginService: LoginService) { };
+  constructor(private loginService: LoginService , private router : Router) { };
 
   public toggleInvUser(curVal: boolean) {
     this.invalidUser = curVal;
@@ -35,10 +36,9 @@ export class LoginComponent implements OnInit {
           expiryTime: response.expirytime,
           userId: response.userDataId
         };
-        localStorage.setItem('currentUser', JSON.stringify(userObj));
-        //$http.defaults.headers.common.Authorization = 'Bearer ' + response.data.token;
-        //sharedService.toggleLoader(false);
-        //$state.go('home.admin');
+        localStorage.setItem('currentUser', JSON.stringify(userObj))
+        this.router.navigate(['/admin/dashboard']);
+        
       }
     }
       , error => {

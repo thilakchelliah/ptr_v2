@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
+import {  HTTP_INTERCEPTORS } from '@angular/common/http';
+import {ApiInterceptorService} from './interceptor/api-interceptor.service'
 
 @NgModule({
   declarations: [AdminComponent, LoginComponent],
@@ -14,6 +16,13 @@ import { LoginComponent } from './login/login.component';
     AdminRoutingModule,
     HttpModule,
     FormsModule
+  ],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptorService,
+      multi: true
+    }
   ]
 })
 export class AdminModule { }
