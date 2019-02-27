@@ -9,10 +9,11 @@ import { LoginComponent } from './login/login.component';
 import {  HTTP_INTERCEPTORS } from '@angular/common/http';
 import {ApiInterceptorService} from './interceptor/api-interceptor.service';
 import { BlogManagerComponent } from './widgets/blog-manager/blog-manager.component';
-import { TutManagerComponent } from './widgets/tut-manager/tut-manager.component'
+import { TutManagerComponent } from './widgets/tut-manager/tut-manager.component';
+import { UserManagerComponent } from './widgets/user-manager/user-manager.component'
 
 @NgModule({
-  declarations: [AdminComponent, LoginComponent, BlogManagerComponent, TutManagerComponent],
+  declarations: [AdminComponent, LoginComponent, BlogManagerComponent, TutManagerComponent, UserManagerComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,

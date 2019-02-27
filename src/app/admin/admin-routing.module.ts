@@ -4,6 +4,7 @@ import { AdminComponent } from './admin.component';
 import { LoginComponent } from './login/login.component';
 import { BlogManagerComponent } from './widgets/blog-manager/blog-manager.component';
 import { TutManagerComponent } from './widgets/tut-manager/tut-manager.component';
+import { UserManagerComponent } from './widgets/user-manager/user-manager.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -29,6 +30,10 @@ const routes: Routes = [
 			{
 				path: 'tutManager',
 				component: TutManagerComponent,
+			},
+			{
+				path: 'userManager',
+				component: UserManagerComponent,
 			}
 		]
 	},
