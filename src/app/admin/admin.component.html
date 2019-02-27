@@ -24,13 +24,13 @@
                     </a>
                 </li>
                 <li>
-                    <a ui-sref="home.BlogManager">
+                    <a routerLink="/admin/dashboard/blogManager">
                         <i class="fa fa-rss-square" aria-hidden="true"></i>
                         <p>Blog Manager</p>
                     </a>
                 </li>
                 <li>
-                    <a ui-sref="home.TutorialManager">
+                    <a routerLink="/admin/dashboard/tutManager">
                         <i class="fa fa-book" aria-hidden="true"></i>
                         <p>Tutorial Controller</p>
                     </a>
@@ -103,7 +103,7 @@
 
         <div class="content">
             <div class="container-fluid">
-              
+                <router-outlet></router-outlet>
 
             </div>
         </div>
