@@ -6,6 +6,9 @@ import { GridComponent } from './widgets/grid/grid.component';
   declarations: [GridComponent],
   imports: [
     CommonModule
+  ],
+  exports: [
+    GridComponent
   ]
 })
 export class SharedModule { }
