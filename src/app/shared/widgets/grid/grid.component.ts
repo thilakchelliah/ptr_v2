@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-grid',
@@ -9,8 +9,10 @@ import { Component, OnInit } from '@angular/core';
 export class GridComponent implements OnInit {
 
   constructor() { }
-
+  
   ngOnInit() {
+    debugger;
+   var temp= $(".display");
   }
 
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule } from '@angular/http'
 import { FormsModule } from '@angular/forms';
+import {SharedModule} from '../shared/shared.module'
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
@@ -18,7 +19,8 @@ import { UserManagerComponent } from './widgets/user-manager/user-manager.compon
     CommonModule,
     AdminRoutingModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [
     {
