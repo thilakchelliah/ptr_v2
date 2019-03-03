@@ -10,7 +10,7 @@ import { AuthGuard } from './auth.guard';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'dashboard',
+		redirectTo: '/dashboard',
 		pathMatch: 'full'
 	},
 	{
@@ -36,10 +36,6 @@ const routes: Routes = [
 				component: UserManagerComponent,
 			}
 		]
-	},
-	{
-
-
 	}
 
 ];

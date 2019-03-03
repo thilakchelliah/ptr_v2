@@ -1,1 +1,1 @@
-ng serve --open --host $IP --port $PORT --disable-host-check
+ng serve --open --host $IP --port $PORT --disable-host-check 

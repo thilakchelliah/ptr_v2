@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
     {
         path: '',
-        loadChildren: './blog/blog.module#BlogModule'
+        redirectTo:'blog',
+        pathMatch: 'full' 
     },
     {
         path: 'admin',
-        //canActivate: [AuthGuardService],
         loadChildren: './admin/admin.module#AdminModule'
     },
     {
