@@ -23,7 +23,6 @@ export class ApiInterceptorService implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     // Get the auth token from the service.
-    debugger;
     const curObj = localStorage.getItem('currentUser');
     let authToken=JSON.parse(curObj);
     if (authToken) {

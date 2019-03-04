@@ -4,14 +4,15 @@
             <div class="card-body">
                 <h5 class="card-title">User List</h5>
                 <div class="table-responsive">
-                    <app-grid [gdId]="'userGrid'" [gridData]="'apiS/User/FetchAll'" [gdType]="'URL'" [coloumnData]="'userGrid'" > </app-grid>
-                        <!-- <thead>
+                    <app-grid [gdId]="'userGrid'" [gridData]="'apiS/User/FetchAll'" [gdType]="'URL'"
+                        [coloumnData]="'userGrid'">
+                        <thead class="thead-dark">
                             <tr>
                                 <th>username</th>
                                 <th>email</th>
                             </tr>
-                        </thead> -->
-                    
+                        </thead>                       
+                    </app-grid>
 
                 </div>
             </div>

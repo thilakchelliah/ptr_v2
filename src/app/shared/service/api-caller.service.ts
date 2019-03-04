@@ -10,7 +10,7 @@ export class ApiCallerService {
   apiUrl = environment.serviceURL;
   constructor(private httpClient: HttpClient) { }
 
-  public callGetUrlTofetch(url: string) {
+  public callGetUrlTofetch (url: string) {
     return this.httpClient.get(this.apiUrl + url);
   };
 

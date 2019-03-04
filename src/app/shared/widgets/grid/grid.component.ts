@@ -1,6 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as $ from 'jquery';
 import { ApiCallerService } from '../../service/api-caller.service';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { User } from 'src/app/model/user';
+import { stringify } from '@angular/compiler/src/util';
+
+
 
 @Component({
     selector: 'app-grid',
@@ -14,7 +18,7 @@ export class GridComponent implements OnInit {
     @Input() gdType: string;
     @Input() coloumnData: string;
     @Input() ver: string;
-    datatable: any;
+    tbodyContent: string;
     globalColData: any = {
         userGrid: [{ 'title': 'User Name', 'data': 'username' }, { 'title': 'Email', 'data': 'email' }],
         blogGrid: [{ 'title': 'Post Title', 'data': 'title' }, { 'title': 'Preview', 'data': 'previewText' }, { 'title': 'Related Tags', 'data': 'tagData' },
@@ -55,43 +59,39 @@ export class GridComponent implements OnInit {
 
     constructor(private apiCallerService: ApiCallerService) { }
 
-    ngOnInit(){}
+    ngOnInit() {
+        this.apiCallerService.callGetUrlTofetch(this.gridData).subscribe((res) => {
+            console.log(res);
+            var userList = res as Array<any>;
+            var htmlOutput = "";
+            userList.forEach(m => {
+                htmlOutput += "<tr>";
+                this.globalColData[this.coloumnData].forEach(t => {
+                    console.log();
+                    htmlOutput += "<td>" + m[t.data] + "</td>";
+                });
+                htmlOutput += "</tr>";
+            });
+            this.tbodyContent = htmlOutput;
 
-    ngAfterContentInit() {
-        var temp = $(".display");
-        temp.attr('id', this.gdId);
-        if (this.gdType == "URL") {
-            this.apiCallerService.callGetUrlTofetch(this.gridData)
-                .subscribe((response: any) => {
-                    var temp = this;
-                    // this.datatable = $("#" + this.gdId).DataTable({
-                    //     data: response.data,
-                    //     columns: this.globalColData[this.coloumnData]
-                    //     // createdRow: function (row, data, dataIndex) {
-                    //     //     $compile(angular.element(row).contents())($scope);
-                    //     // }
-                    // });
-                }
-                    , error => {
-                        console.log(error);// Error getting the data
-                    })
-        }
-        // then(function (resp) {
-
-        //     this.datatable = $("#" + this.gdId).DataTable({
-        //         data: resp.data,
-        //         columns: this.globalColData[this.coloumnData],
-        //         createdRow: function (row, data, dataIndex) {
-        //             $compile(angular.element(row).contents())($scope);
-        //         }
-        //     });
-        //     debugger;
-        //     sharedService.toggleLoader(false);
-        // },
-        //     function (error) { });
-
+        },
+            (error) => {
+                console.log(error);
+            }
+        );
 
     }
+    ngAfterViewInit(): void {
+
+    }
+
+    ngOnDestroy(): void {
+
+    }
+
+
+
+
 
 }
 
