@@ -27,14 +27,12 @@
               "src/assets/css/cards.css",
               "src/assets/css/common.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/font-awesome/css/font-awesome.min.css",
-              "./node_modules/datatables.net-dt/css/jquery.dataTables.css"
+              "./node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": [             
               "./node_modules/bootbox/bootbox.min.js",
               "./node_modules/angular-jwt/dist/angular-jwt.min.js",             
-              "./node_modules/summernote/dist/summernote-bs4.min.js",
-              "./node_modules/datatables.net/js/jquery.dataTables.js"
+              "./node_modules/summernote/dist/summernote-bs4.min.js"
             ]
           },
           "configurations": {
