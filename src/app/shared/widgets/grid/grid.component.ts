@@ -64,7 +64,14 @@ export class GridComponent implements OnInit {
             console.log(res);
             var userList = res as Array<any>;
             var htmlOutput = "";
+            htmlOutput += "<thead><tr>";
+            this.globalColData[this.coloumnData].forEach(v => {
+                console.log();
+                htmlOutput += "<th>" + v.title + "</th>";
+            });
+            htmlOutput += "</tr></thead>";
             userList.forEach(m => {
+
                 htmlOutput += "<tr>";
                 this.globalColData[this.coloumnData].forEach(t => {
                     console.log();

@@ -14,20 +14,15 @@
       <div class="card-block tab-pane fade show active" id="blogData">
           <h4 class="card-title">New Blog Data</h4>
 
-          <!-- <blog-post-manager-directive function-type="add"></blog-post-manager-directive> -->
+          <app-blog-editor [functionType]="add"></app-blog-editor>
 
       </div>
       <div class="card-block tab-pane fade" id="blogManager">
           <h4 class="card-title">Blog Manager</h4>
           <div class="table-responsive">
-              <!-- <grid-directive id="blogGridWrapDir" gd-id="blogGrid" grid-data="'/apiS/Blog/FetchAll'" gd-type="'URL'" coloumn-data="blogGrid" ver="1">
-                  <thead>
-                      <tr>
-                          <th>username</th>
-                          <th>email</th>
-                      </tr>
-                  </thead>
-              </grid-directive> -->
+                <app-grid id="blogGridWrapDir" [gdId]="'blogGrid'" [gridData]="'apiS/Blog/FetchAll'" [gdType]="'URL'" [coloumnData]="'blogGrid'" ver="1">
+                    
+                </app-grid>
           </div>
       </div>
   </div>

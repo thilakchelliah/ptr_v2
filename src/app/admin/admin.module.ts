@@ -12,9 +12,10 @@ import { ApiInterceptorService } from './interceptor/api-interceptor.service';
 import { BlogManagerComponent } from './widgets/blog-manager/blog-manager.component';
 import { TutManagerComponent } from './widgets/tut-manager/tut-manager.component';
 import { UserManagerComponent } from './widgets/user-manager/user-manager.component';
+import { BlogEditorComponent } from './widgets/blog-editor/blog-editor.component';
 
 @NgModule({
-  declarations: [AdminComponent, LoginComponent, BlogManagerComponent, TutManagerComponent, UserManagerComponent],
+  declarations: [AdminComponent, LoginComponent, BlogManagerComponent, TutManagerComponent, UserManagerComponent, BlogEditorComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
