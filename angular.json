@@ -27,7 +27,8 @@
               "src/assets/css/cards.css",
               "src/assets/css/common.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/font-awesome/css/font-awesome.min.css"
+              "./node_modules/font-awesome/css/font-awesome.min.css",
+              "./node_modules/summernote/dist/summernote-bs4.css"
             ],
             "scripts": []
           },
