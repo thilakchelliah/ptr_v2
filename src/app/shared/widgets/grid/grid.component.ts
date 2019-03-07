@@ -97,7 +97,9 @@ export class GridComponent implements OnInit {
     }
 
 
-
+    refreshGrid(){
+        this.ngOnInit();
+    }
 
 
 }

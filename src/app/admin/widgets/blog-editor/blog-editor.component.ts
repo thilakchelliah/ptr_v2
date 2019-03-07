@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { BlogManagerService } from '../../service/blog-manager.service'
 import { TaggerComponent } from '../../../shared/widgets/tagger/tagger.component'
+import { BlogManagerComponent } from '../blog-manager/blog-manager.component'
 declare var $: any;
 declare var bootbox: any;
 
@@ -17,7 +18,7 @@ export class BlogEditorComponent implements OnInit {
   title = "";
   previewText = "";
   @ViewChild(TaggerComponent) tagger: TaggerComponent;
-  constructor(private blogManagerService: BlogManagerService) { }
+  constructor(private blogManagerService: BlogManagerService,private bmc: BlogManagerComponent) { }
 
   ngOnInit() {
     this.buttonText = this.functionType === "add" ? "Add New " : "Update ";
@@ -60,6 +61,7 @@ export class BlogEditorComponent implements OnInit {
         this.title = "";
         this.previewText = "";
         this.tagger.deleteAllTags();
+        this.bmc.refreshGrid();
         //var dtable = $("#blogGrid").DataTable();
         // sharedService.callGetUrlTofetch('/apiS/Blog/FetchAll').then(function (resp) {
         //   dtable.clear();

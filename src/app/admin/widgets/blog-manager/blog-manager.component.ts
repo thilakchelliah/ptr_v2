@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GridComponent } from '../../../shared/widgets/grid/grid.component'
 
 @Component({
   selector: 'app-blog-manager',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogManagerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gc: GridComponent) { }
 
   ngOnInit() {
+  }
+  refreshGrid(){
+    this.gc.refreshGrid();
   }
 
 }
