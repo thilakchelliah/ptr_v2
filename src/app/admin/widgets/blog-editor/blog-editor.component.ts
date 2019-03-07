@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { BlogManagerService } from '../../service/blog-manager.service'
+import { TaggerComponent } from '../../../shared/widgets/tagger/tagger.component'
 declare var $: any;
 declare var bootbox: any;
 
@@ -15,6 +16,7 @@ export class BlogEditorComponent implements OnInit {
   buttonText: string;
   title = "";
   previewText = "";
+  @ViewChild(TaggerComponent) tagger: TaggerComponent;
   constructor(private blogManagerService: BlogManagerService) { }
 
   ngOnInit() {
@@ -57,7 +59,7 @@ export class BlogEditorComponent implements OnInit {
         saveDialog.find('.bootbox-body').html('Blog Successfully Created/Updated');
         this.title = "";
         this.previewText = "";
-        //this.$broadcast('deleteAllTags');
+        this.tagger.deleteAllTags();
         //var dtable = $("#blogGrid").DataTable();
         // sharedService.callGetUrlTofetch('/apiS/Blog/FetchAll').then(function (resp) {
         //   dtable.clear();
