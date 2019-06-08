@@ -9,11 +9,11 @@ const routes: Routes = [
     },
     {
         path: 'admin',
-        loadChildren: './admin/admin.module#AdminModule'
+        loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
     },
     {
         path: 'blog',
-        loadChildren: './blog/blog.module#BlogModule'
+        loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
     }
   ];
 
